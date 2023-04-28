@@ -15,16 +15,16 @@ $CFG->cursitesettings = ''; // Site Settings
 
 /* --- Debugging mode ends ---- */
 
-$CFG->dbtype = "mariadb";
+$CFG->dbtype = "pgsql";
 $CFG->dblibrary = "native";
 $CFG->dbhost = "localhost";
 $CFG->dbname = "qubits-new";
-$CFG->dbuser = "root";
-$CFG->dbpass = "";
+$CFG->dbuser = "postgres";
+$CFG->dbpass = "mWcdr456#";
 $CFG->prefix = "mdl_";
 $CFG->dboptions = array(
     'dbpersist' => 0,
-    'dbport' => "",
+    'dbport' => 5432,
     'dbsocket' => "",
     'dbcollation' => "utf8mb4_unicode_ci",
 );

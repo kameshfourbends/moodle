@@ -52,12 +52,13 @@
 {{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
+{{> theme_qubitsbasic/sidebar }}
 {{> core/local/toast/wrapper}}
-<div id="page-wrapper" class="d-print-block d-none">
+<div id="page-wrapper" class="d-print-block">
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_boost/navbar }}
+    {{> theme_qubitsbasic/navbar }}
     {{#courseindex}}
         {{< theme_boost/drawer }}
             {{$id}}theme_boost-drawers-courseindex{{/id}}
@@ -89,7 +90,7 @@
             {{$closebuttontext}}{{#str}}closeblockdrawer, core{{/str}}{{/closebuttontext}}
         {{/ theme_boost/drawer}}
     {{/hasblocks}}
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container d-none">
         <div id="topofscroll" class="main-inner">
             <div class="drawer-toggles d-flex">
                 {{#courseindex}}
@@ -167,199 +168,6 @@
     </div>
     {{{ output.standard_after_main_region_html }}}
 </div>
-
-{{> theme_qubitsbasic/sidebar }}
-
-<section class="my-course-section">
-        <div class="my-course-content shadow-lg">
-            <i class="qicon-menu  icon"></i>
-            <span class="text">My Courses</span>
-        </div>
-        <div class="row m-0 flex-mobile">
-
-
-            <div
-                class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
-
-                <div class="card-body bg-wave p-0 card-border-radius card-text-complete-color">
-                    <div class="card-body-overlay card-body-border-radius" style="--cardbgcolor:rgba(62,62,62,0.2)">
-                        <p class="card-text">Computing Systems and Softwares</p>
-                        <div class="row align-items-center">
-                            <div class="card-title card-text-size col-lg-9 col-md-9 col-sm-8 w-auto pr-0">DigiChamps
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-4 w-auto my-2">
-                                <div class="row mx-0 justify-content-end">
-                                    <i class="qicon-tick-mark success-tick"></i>
-                                    <div class="white-circle col-9 w-auto">3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="inner-section card-border-radius">
-                    <div class="d-flex justify-content-between text-grey">
-                        <div class="d-flex align-items-center pb-2">
-                            <span class="qicon-calendar"></span>
-                            <div class="pl-2">Last opened: Jan 13, 2023</div>
-                        </div>
-                        <div>
-                            56%
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar success-color" role="progressbar" style="width: 25%;" aria-valuenow=""
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
-
-                <div class="card-body bg-wave p-0 card-border-radius card-text-color">
-                    <div class="card-body-overlay card-body-border-radius" style="--cardbgcolor:rgb(255, 185, 0, 0.5);">
-                        <p class="card-text">Computing Systems and Softwares</p>
-                        <div class="row align-items-center">
-                            <div class="card-title card-text-size col-lg-9 col-md-9 col-sm-8 w-auto pr-0">DigiChamps
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-4 w-auto my-2">
-                                <div class="row mx-0 justify-content-end">
-                                    <!-- <i class="qicon-tick-mark success-tick"></i> -->
-                                    <div class="white-circle col-9 w-auto">3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="inner-section card-border-radius">
-                    <div class="d-flex justify-content-between text-grey">
-                        <div class="d-flex align-items-center pb-2">
-                            <span class="qicon-calendar"></span>
-                            <div class="pl-2">Last opened: Jan 13, 2023</div>
-                        </div>
-                        <div>
-                            56%
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar success-color" role="progressbar" style="width: 25%;" aria-valuenow=""
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
-
-                <div class="card-body bg-wave p-0 card-border-radius card-text-color">
-                    <div class="card-body-overlay card-body-border-radius" style="--cardbgcolor:rgb(255, 185, 0, 0.5);">
-                        <p class="card-text">Computing Systems and Softwares</p>
-                        <div class="row align-items-center">
-                            <div class="card-title card-text-size col-lg-9 col-md-9 col-sm-8 w-auto pr-0">DigiChamps
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-4 w-auto my-2">
-                                <div class="row mx-0 justify-content-end">
-                                    <!-- <i class="qicon-tick-mark success-tick"></i> -->
-                                    <div class="white-circle col-9 w-auto">3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="inner-section card-border-radius">
-                    <div class="d-flex justify-content-between text-grey">
-                        <div class="d-flex align-items-center pb-2">
-                            <span class="qicon-calendar"></span>
-                            <div class="pl-2">Last opened: Jan 13, 2023</div>
-                        </div>
-                        <div>
-                            56%
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar success-color" role="progressbar" style="width: 25%;" aria-valuenow=""
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
-
-                <div class="card-body bg-wave p-0 card-border-radius card-text-color">
-                    <div class="card-body-overlay card-body-border-radius" style="--cardbgcolor:rgb(255, 185, 0, 0.5);">
-                        <p class="card-text">Computing Systems and Softwares</p>
-                        <div class="row align-items-center">
-                            <div class="card-title card-text-size col-lg-9 col-md-9 col-sm-8 w-auto pr-0">DigiChamps
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-4 w-auto my-2">
-                                <div class="row mx-0 justify-content-end">
-                                    <!-- <i class="qicon-tick-mark success-tick"></i> -->
-                                    <div class="white-circle col-9 w-auto">3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="inner-section card-border-radius">
-                    <div class="d-flex justify-content-between text-grey">
-                        <div class="d-flex align-items-center pb-2">
-                            <span class="qicon-calendar"></span>
-                            <div class="pl-2">Last opened: Jan 13, 2023</div>
-                        </div>
-                        <div>
-                            56%
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar success-color" role="progressbar" style="width: 25%;" aria-valuenow=""
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
-
-                <div class="card-body bg-wave p-0 card-border-radius card-text-color">
-                    <div class="card-body-overlay card-body-border-radius" style="--cardbgcolor:rgb(255, 185, 0, 0.5);">
-                        <p class="card-text">Computing Systems and Softwares</p>
-                        <div class="row align-items-center">
-                            <div class="card-title card-text-size col-lg-9 col-md-9 col-sm-8 w-auto pr-0">DigiChamps
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-4 w-auto my-2">
-                                <div class="row mx-0 justify-content-end">
-                                    <!-- <i class="qicon-tick-mark success-tick"></i> -->
-                                    <div class="white-circle col-9 w-auto">3</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="inner-section card-border-radius">
-                    <div class="d-flex justify-content-between text-grey">
-                        <div class="d-flex align-items-center pb-2">
-                            <span class="qicon-calendar"></span>
-                            <div class="pl-2">Last opened: Jan 13, 2023</div>
-                        </div>
-                        <div>
-                            56%
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar success-color" role="progressbar" style="width: 25%;" aria-valuenow=""
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </body>
 </html>

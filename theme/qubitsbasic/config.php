@@ -55,6 +55,6 @@ $THEME->layouts = [
         'file' => 'mycourses.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true),
+        'options' => array('nonavbar' => false),
     )
 ];

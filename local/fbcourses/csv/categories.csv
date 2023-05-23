@@ -1,0 +1,39 @@
+name,parent,description
+development,top,"It contains web development and Mobile development courses."
+web-development,development,Web Development
+php,web-development,PHP
+javascript,web-development,Javascript
+react,web-development,React
+business,top,"Entrepreneur can learn from these courses will become a businessman."
+entrepreneurship,business,Entrepreneurship
+business-fundamentals,entrepreneurship,"Business Fundamentals"
+data-and-analytics,business,"Data & Analytics"
+sql,data-and-analytics,SQL
+tableau,data-and-analytics,Tableau
+finance,business,Finance
+financial-analysis,finance,"Financial Analysis"
+project-management,business,"Project Management"
+pmbok,project-management,PMBOK
+technology,top,"We collaborated technology experts. It helps to uplift your carrier."
+docker,technology,Docker
+creative,top,Creative
+photography,top,"Photography is the art, we will teach you. Learning latest methods."
+photography-fundamentals,photography,"Photography Fundamentals"
+dslr,photography,"DSLR"
+photography-tools,photography,"Photography Tools"
+mobile-photography,photography,"Mobile Photography"
+affinity-photography,photography,"Affinity Photo"
+design,top,Design
+graphic-design,design,"Graphic Design"
+photoshop,graphic-design,Photoshop
+user-experience,design,"User Experience"
+user-experience-design,user-experience,"User Experience Design"
+management,top,Management
+software,top,Software
+music,top,Music
+personal-development,top,"Personal Development"
+social-skills,personal-development,"Social Skills"
+emotional-intelligence,personal-development,"Emotional Intelligence"
+lifestyle,top,"Lifestyle"
+food-and-beverage,lifestyle,"Food & Beverage"
+cooking,food-and-beverage,Cooking

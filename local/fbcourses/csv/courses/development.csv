@@ -1,0 +1,12 @@
+shortname,fullname,summary,summaryformat,category
+php-for-beginners,"PHP for Beginners","Build a Content Management System from Scratch with PHP and MySQL",1,2
+php-laravel-beginners,"PHP with Laravel for beginners - Become a Master in Laravel","Learn to master Laravel to make advanced applications like the real CMS app we build on this course",1,2
+understand-javascript,"JavaScript: Understanding the Weird Parts","An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more.",1,2
+react-the-complete-guide-incl-redux,"React - The Complete Guide (incl Hooks, React Router, Redux)","Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",1,2
+modern-javascript-from-the-beginning,"Modern JavaScript From The Beginning","Learn and build projects with pure JavaScript (No frameworks or libraries)",1,2
+react-redux-tutorial,"Advanced React and Redux","Walkthroughs on advanced React v16.6.3 and Redux v4.0.0 - Authentication, Testing, Middlewares, HOC's, and Deployment",1,2
+node-with-react-fullstack-web-development,"Node with React: Fullstack Web Development","Build and deploy fullstack web apps with NodeJS, React, Redux, Express, and MongoDB",1,2
+object-oriented-php-mvc,"Object Oriented PHP & MVC","Build a custom object oriented PHP MVC framework and then build an application with it",1,2
+the-complete-angular-master-class,"The Complete Angular Course: Beginner to Advanced","The most comprehensive Angular 4 (Angular 2+) course. Build a real e-commerce app with Angular, Firebase and Bootstrap 4",1,2
+make-a-social-media-website,"Build a Social Network from Scratch: JavaScript PHP + MySQL","Learn JavaScript, PHP and MySQL by building the ultimate social network website from scratch! The complete guide!",1,2
+

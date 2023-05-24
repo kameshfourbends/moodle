@@ -3,7 +3,7 @@
             <img src="{{globals.config.wwwroot}}/theme/qubitsbasic/pix/qubits-full-logo.svg" class="main-logo">
             <img src="{{globals.config.wwwroot}}/theme/qubitsbasic/pix/qubits-symbol.svg" class="compact-logo">
 
-            <i class="fa-solid fa-arrow-left arrow-left"></i>
+            <i class="icon fa fa-arrow-left arrow-left"></i>
 
         </div>
         <div class="hr-line"></div>
@@ -15,7 +15,7 @@
                     <i class="qicon-chevron-down-thin arrow icon"></i>
                 </a>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="#">My Courses</a></li>
+                    
                     <li><a href="#">Digi Pro Level 3 Demo</a></li>
                     <li><a href="#">Digi Pro Level 4 Demo</a></li>
                     <li><a href="#">Digi Pro Level 5 Demo</a></li>
@@ -45,18 +45,51 @@
 
 {{#js}}
 require(['jquery'], function($){
-    $(".fa-arrow-left").click(function () {
-        $(".sidebar").addClass("close-bars");
-        $(".compact-logo").show();
-        $(".qicon-menu").show();
-    });
-    $(".qicon-menu").click(function () {
-        $(".sidebar").removeClass("close-bars");
-        $(".compact-logo").hide();
-        $(".qicon-menu").hide();
-    });
-    $(".arrow").click(function () {
-        $(".nav-item").toggleClass("showMenu");
-    });
+    $(window).on("resize", function (e) {
+                checkScreenSize();
+            });
+
+            checkScreenSize();
+
+            function checkScreenSize() {
+                var newWindowWidth = $(window).width();
+                if (newWindowWidth < 578) {
+                    $(".fa-arrow-left").click(function () {
+                        $(".sidebar").hide();
+                        $(".sidebar-overlay").hide();
+                        $(".qicon-menu").show();
+                    });
+                    $(".qicon-menu").click(function () {
+                        $(".sidebar").show().css({ "transition": "all 0.5s ease", "transition-delay": "3s" });
+                        $(".sidebar-overlay").show();
+
+                    });
+                    $(".sidebar-overlay").click(function () {
+                        $(".sidebar").hide().css({ "transition": "all 0.5s ease", "transition-delay": "3s" });;
+                        $(".sidebar-overlay").hide();
+                        $(".qicon-menu").show();
+                    });
+                    $(".arrow").click(function () {
+                        $(".nav-item").toggleClass("showMenu");
+                    });
+                }
+                else {
+                    $(".fa-arrow-left").click(function () {
+                        $(".sidebar").addClass("close-bars");
+                        $(".compact-logo").show();
+                        $(".qicon-menu").show();
+                        $(".pagetitle-left-alignment").addClass("closebar-left-alignment");
+                    });
+                    $(".qicon-menu").click(function () {
+                        $(".sidebar").removeClass("close-bars");
+                        $(".compact-logo").hide();
+                        $(".qicon-menu").hide();
+                        $(".pagetitle-left-alignment").removeClass("closebar-left-alignment");
+                    });
+                    $(".arrow").click(function () {
+                        $(".nav-item").toggleClass("showMenu");
+                    });
+                }
+            }
 });
 {{/js}}

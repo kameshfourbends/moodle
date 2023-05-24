@@ -60,7 +60,7 @@
     {{> theme_qubitsbasic/sidebar }}
     {{> theme_qubitsbasic/navbar }}
     <section class="my-course-section" style="top:81px;">
-        <div class="row m-0 flex-mobile">
+        <div class="row m-0 flex-mobile" id="mycrsecard" data-offset="0" data-limit="6" data-complete="no">
         
             <div class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-text-complete-color card-border-radius card-box-shadow card-border">
                 <div class="card-body bg-wave p-0 card-border-radius">
@@ -133,6 +133,7 @@
                     </div>
                 </div>
             </div>
+            
             <div
                 class="card col-lg-3 max-width max-width-2 flex-grow col-md-6 col-sm-12 p-0 card-width card-border-radius card-box-shadow card-border">
 
@@ -367,5 +368,77 @@ M.util.js_pending('theme_boost/loader');
 require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
     Drawer.init();
     M.util.js_complete('theme_boost/loader');
+});
+{{/js}}
+
+{{#js}}
+require(['jquery', 'core/config', 'core/templates'], function($, Config, Templates){
+   let scrolllock = false
+   function qubits_load_mycourses(){
+        let mycourseurl = `${Config.wwwroot}/lib/ajax/service.php?sesskey=${Config.sesskey}&info=core_course_get_enrolled_courses_by_timeline_classification`;
+        let offset = $("#mycrsecard").data("offset")
+        let limit = $("#mycrsecard").data("limit")
+        let complete = $("#mycrsecard").data("complete")
+        if(complete == "yes"){
+            return null;
+        }
+        let payload = [
+                {
+                    "index": 0,
+                    "methodname": "core_course_get_enrolled_courses_by_timeline_classification",
+                    "args": {
+                        "offset": offset,
+                        "limit": limit,
+                        "classification": "all",
+                        "sort": "fullname",
+                        "customfieldname": "level",
+                        "customfieldvalue": ""
+                    }
+                }
+            ];
+        $.ajax({
+            url : mycourseurl,
+            type : "POST",
+            data : JSON.stringify(payload),
+            contentType : "application/json"
+        }).done(function(resp){
+            let curresp = resp[0]
+            if(curresp.error){
+                console.log("Error Occurred")
+            }else{
+                let curdata = curresp.data
+                let curcourses = curdata?.courses
+                let nextoffset = curdata?.nextoffset
+                let curoffset = $("#mycrsecard").data("offset")
+                if(nextoffset==curoffset){
+                    $("#mycrsecard").data("complete", "yes")
+                    scrolllock = true
+                }else{
+                    $("#mycrsecard").data("offset", nextoffset)
+                    console.log("Courses >>>> ")
+                    console.log(JSON.stringify(curcourses, null, 4))
+                    console.log("****")
+                    curcourses.forEach((course) => {
+                        Templates.render('theme_qubitsbasic/course/coursecard', course).then((coursecardhtml) => {
+                            $("#mycrsecard").append(coursecardhtml)
+                        });
+                    });
+                    setTimeout(() => {
+                        scrolllock = false
+                    }, 1000);
+                }
+            }  
+        });
+   }
+   scrolllock = true
+   qubits_load_mycourses()
+
+   $( window ).on( "scroll", function() {
+        if(scrolllock===false){
+            scrolllock = true
+            qubits_load_mycourses()
+        }
+    });
+
 });
 {{/js}}

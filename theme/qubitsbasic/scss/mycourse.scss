@@ -1,11 +1,6 @@
-:root {
-  --cardbgcolor: rgb(255, 185, 0, 0.5);
-  --cardtextcolor: #b36700;
-}
-
+@import "./preset/default.scss";
 @import "./mixins.scss";
 
-$colorbgcard: blue;
 @font-face {
   font-family: "qubits";
   src: url("[[font:theme|qubits.eot]]?yz5onj");
@@ -78,9 +73,9 @@ $colorbgcard: blue;
   top: -20%;
   font-size: 25px;
   z-index: 20;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--white);
   color: #78c466;
 }
 .navbar.fixed-top {
@@ -126,7 +121,7 @@ $colorbgcard: blue;
     .text {
       font-size: 20px;
       font-weight: 600;
-      color: #333333;
+      color: var(--basetextcolor);
     }
     .fa-bars {
       margin: 0 15px;
@@ -136,10 +131,11 @@ $colorbgcard: blue;
   .text {
     padding-left: 10px;
   }
-  .card {
+  .coursecard {
     &:hover {
-      color: white;
-      background-color: var(--cardhoverbgcolor);
+      background-color: darken($colorbgcard, 20);
+      color: var(--white);
+
       transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
     }
@@ -153,15 +149,26 @@ $colorbgcard: blue;
   .card-border {
     border: 1px solid #cacaca !important;
   }
-  .card-text-complete-color {
-    color: #4d4d4d;
-  }
+
   .card-body-overlay {
-    background-color: var(--cardbgcolor);
-    padding: 20px 20px 0px 10px;
+    background: linear-gradient(
+      lighten($colorbgcard, 15),
+      darken($colorbgcard, 10)
+    );
+    color: darken($colorbgcard, 45);
+    padding: 20px 20px 0 10px;
+
+    &:hover {
+      background: linear-gradient(
+        darken($colorbgcard, 15),
+        darken($colorbgcard, 10)
+      );
+      color: var(--white);
+    }
   }
+
   .white-circle {
-    background-color: white;
+    background-color: var(--white);
     height: 50px;
     max-width: 50px !important;
     border-radius: 50%;
@@ -195,7 +202,7 @@ $colorbgcard: blue;
       font-size: 30px;
     }
     @include breakpoint(lg) {
-      font-size: 36px;
+      font-size: 46px;
     }
   }
 
@@ -268,7 +275,7 @@ $colorbgcard: blue;
   }
   .arrow-left {
     cursor: pointer;
-    color: #116cbf;
+    color: var(--hovertextcolor);
     font-size: 15px;
   }
   .nav-links {
@@ -291,11 +298,11 @@ $colorbgcard: blue;
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: #585858;
+        color: var(--basetextcolor2);
 
         i {
           &:hover {
-            color: #116cbf;
+            color: var(--hovertextcolor);
           }
         }
         .link_name {
@@ -366,7 +373,7 @@ $colorbgcard: blue;
   display: none;
 }
 .sidebar .nav-links li:hover > a {
-  color: #116cbf;
+  color: var(--hovertextcolor);
 }
 
 .sidebar .nav-links li.showMenu i.arrow {
@@ -429,7 +436,7 @@ $colorbgcard: blue;
 
 .inner-section {
   padding: 20px;
-  background-color: white;
+  background-color: var(--white);
 }
 .card-border-radius {
   border-radius: 8px !important;
@@ -487,7 +494,7 @@ $colorbgcard: blue;
 }
 .sidebar .arrow-left {
   cursor: pointer;
-  color: #116cbf;
+  color: var(--hovertextcolor);
   font-size: 15px;
 }
 .close-bars .arrow-left {
@@ -524,7 +531,7 @@ $colorbgcard: blue;
   background: #e2eaf2;
 }
 .sidebar .nav-links li:hover > a {
-  color: #116cbf;
+  color: var(--hovertextcolor);
 }
 .sidebar .nav-links li .icon-link {
   display: flex;
@@ -554,10 +561,10 @@ $colorbgcard: blue;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #585858;
+  color: var(--basetextcolor2);
 }
 .sidebar .nav-links li a i:hover {
-  color: #116cbf;
+  color: var(--hovertextcolor);
 }
 .sidebar .nav-links li a .link_name {
   font-size: 16px;
@@ -676,7 +683,7 @@ $colorbgcard: blue;
   }
 }
 .numbercolor {
-  color: black;
+  color: darken($colorbgcard, 45);
 }
 .sidebar .sub-menu {
   padding-left: 4rem !important;
@@ -728,14 +735,4 @@ $colorbgcard: blue;
 .userpic {
   width: 78px;
   text-align: center;
-}
-.sample-class {
-  background-color: lighten($colorbgcard, 30);
-  color: darken($colorbgcard, 10);
-  padding: 20px 20px 0 10px;
-
-  &:hover {
-    background-color: darken($colorbgcard, 20);
-    color: white;
-  }
 }

@@ -45,17 +45,16 @@ $THEME->activityheaderconfig = [
 ];
 
 $THEME->layouts = [
-    'login' => array(
-        'file' => 'login.php',
+    // Most backwards compatible layout without the blocks.
+    'base' => array(
+        'file' => 'incourse.php',
         'regions' => array(),
-        'options' => array('langmenu' => true)
     ),
-    // My courses page.
-    'mycourses' => array(
-        'file' => 'mycourses.php',
-        'regions' => ['side-pre'],
+    // Standard layout with blocks.
+    'standard' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => false),
     ),
     // Main course page.
     'course' => array(
@@ -64,10 +63,53 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),
     ),
+    'coursecategory' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+    ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+    ),
+    // The site home page.
+    'frontpage' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true),
+    ),
+    // Server administration scripts.
+    'admin' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+    ),
+    // My courses page.
+    'mycourses' => array(
+        'file' => 'mycourses.php',
         'regions' => ['side-pre'],
-        'defaultregion' => 'side-pre'
-    )
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true),
+    ),
+    // My dashboard page.
+    'mydashboard' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true, 'langmenu' => true),
+    ),
+    // My public page.
+    'mypublic' => array(
+        'file' => 'incourse.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+    ),
+    'login' => array(
+        'file' => 'login.php',
+        'regions' => array(),
+        'options' => array('langmenu' => true)
+    ),
 ];

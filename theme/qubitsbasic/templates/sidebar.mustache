@@ -43,6 +43,9 @@ require(['jquery'], function($){
                     $(".coursecard").hover(function(){
                         $(".white-circle").toggleClass("numbercolor");
                     });
+                    $(".nav-item").hover(function(){
+                        $(".white-circle").toggleClass("numbercolor");
+                    });
                 }
                 else {
                     $(".fa-arrow-left").click(function () {
@@ -50,12 +53,14 @@ require(['jquery'], function($){
                         $(".compact-logo").show();
                         $(".qicon-menu").show();
                         $(".pagetitle-left-alignment").addClass("closebar-left-alignment");
+                        $(".main-inner").addClass("leftnav");
                     });
                     $(".qicon-menu").click(function () {
                         $(".sidebar").removeClass("close-bars");
                         $(".compact-logo").hide();
                         $(".qicon-menu").hide();
                         $(".pagetitle-left-alignment").removeClass("closebar-left-alignment");
+                         $(".main-inner").removeClass("leftnav");
                     });
                     $(".arrow").click(function () {
                         $(".nav-item").toggleClass("showMenu");

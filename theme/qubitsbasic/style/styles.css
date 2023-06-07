@@ -149,3 +149,41 @@
   text-align: center;
 }
 
+
+.main-inner {
+  position: relative;
+  height: 100vh;
+  left: 140px;
+  width: calc(100% - 260px) !important;
+  transition: all 0.5s ease;
+}
+.secondary-navigation .navigation .nav-tabs .nav-link {
+  color: #585858;
+  font-size: 16px !important;
+}
+
+@media screen and (min-width: 768px) {
+  body.limitedwidth #page.drawers .main-inner,
+  .header-maxwidth,
+  .secondary-navigation .navigation .nav-tabs {
+    max-width: 100% !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  #page.drawers.show-drawer-left {
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .main-inner {
+    left: 0px;
+    width: 100% !important;
+  }
+}
+.leftnav {
+  left: 0 !important;
+}
+.drawer-left {
+  display: none !important;
+}

@@ -101,7 +101,7 @@
             <h1 class="login-heading sr-only">{{#str}} loginto, theme_qubitsbasic, {{sitename}} {{/str}}</h1>
         </div>
     {{/logourl}}
-   
+      {{^logourl}}
         
         <h1 class="login-heading mb-4">{{#str}} loginto, theme_qubitsbasic, {{sitename}} {{/str}}</h1>
     {{/logourl}}
@@ -124,7 +124,7 @@
                 {{^canloginbyemail}}
                     {{#str}} username {{/str}}
                 {{/canloginbyemail}}
-                {{#canloginbyemail}}
+                {{#canloginbyemail}}6
                     {{#str}} usernameemail {{/str}}
                 {{/canloginbyemail}}
             </label>

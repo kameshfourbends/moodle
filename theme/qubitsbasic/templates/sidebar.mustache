@@ -13,7 +13,13 @@
 
 {{#js}}
 require(['jquery'], function($){
-    $(window).on("resize", function (e) {
+                   $(document).on("mouseenter", ".coursecard", function(){
+                        $(this).find(".white-circle").addClass("numbercolor");
+                    }).on("mouseleave", ".coursecard", function(){
+                        $(this).find(".white-circle").removeClass("numbercolor");
+                    });
+					
+           $(window).on("resize", function (e) {
                 checkScreenSize();
             });
 
@@ -40,9 +46,7 @@ require(['jquery'], function($){
                     $(".arrow").click(function () {
                         $(".nav-item").toggleClass("showMenu");
                     });
-                    $(".coursecard").hover(function(){
-                        $(".white-circle").toggleClass("numbercolor");
-                    });
+                    
                     $(".nav-item").hover(function(){
                         $(".white-circle").toggleClass("numbercolor");
                     });
@@ -64,9 +68,6 @@ require(['jquery'], function($){
                     });
                     $(".arrow").click(function () {
                         $(".nav-item").toggleClass("showMenu");
-                    });
-                    $(".coursecard").hover(function(){
-                        $(".white-circle").toggleClass("numbercolor");
                     });
                 }
             }

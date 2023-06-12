@@ -30,6 +30,7 @@ $THEME->doctype = 'html5';
 $THEME->name = 'qubitsbasic';
 $THEME->parents = array('boost');
 $THEME->sheets = ['qubitsfonts','qubitsbasic', 'styles'];
+$THEME->iconsystem = '\\theme_qubitsbasic\\output\\icon_system_fa_custom';
 $THEME->editor_sheets = [];
 $THEME->enable_dock = false;
 $THEME->scss = function($theme) {
